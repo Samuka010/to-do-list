@@ -12,7 +12,8 @@ class TarefasController < ApplicationController
     @tarefa = Tarefa.new(tarefa_params)
     @tarefa.save
 
-
+    flash[:notice] = "Tarefa Adicionada"
+ 
     redirect_to tarefas_url
     
   end
@@ -29,7 +30,7 @@ class TarefasController < ApplicationController
   def destroy
     @tarefa.destroy
 
-    respond_to tarefas_url
+    redirect_to tarefas_url
   end
 
   private

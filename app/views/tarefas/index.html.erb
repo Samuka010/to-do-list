@@ -1,4 +1,16 @@
 <div id="tarefas">
+<% flash.each do |key, value| %>
+    <% if key == alert %>
+      <div class="alert alert-danger" style="color: red;">
+        <%= value %>
+      </div>
+    <% else %>
+       <div class="alert alert-primary" style="color: red;">
+          <%= value %>
+        </div>
+    <% end %>
+<% end %>
+
 <header>
   <h2 id="date"><%= l Date.today %></h2>
   <p id="task-count">
